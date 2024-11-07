@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "web-translate",
+  "version": "1.0",
+  "description": "通过 FSRS 算法复习生词",
+  "permissions":  [
+    "storage",
+    "contextMenus",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://openapi.youdao.com/api"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "assets/icon.png"
+  },
+  "content_script": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": []
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
